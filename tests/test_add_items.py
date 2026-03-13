@@ -19,6 +19,7 @@ class NewItem:
     locator_watch_name = By.XPATH, '(//a[@href="/catalog/watch/apple-watch/watch-hermes-series-10/apple-watch-hermes-series-10-42mm-silver-titanium-case-with-double-tour-attelage-etoupe/"])[2]'
     locator_watch_price = By.XPATH, '//*[@id="catalog"]/div[14]/div[3]/div[1]/div[1]/span'
 
+
     def __init__(self):
         self.watch_price_to_int = None
         self.watch_name_text = None
