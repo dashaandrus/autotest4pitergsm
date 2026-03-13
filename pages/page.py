@@ -2,12 +2,12 @@ from selenium.webdriver.common.by import By
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
-from tests.test_add_items import NewItem
+from pages.add_items import NewItem
 from tests.test_check_the_cart import CheckCart
-from tests.test_close_cart_item_window import CLoseWindow
+from pages.close_cart_item_window import CLoseWindow
 from tests.test_compare_items import CompareItems
 from tests.test_make_the_order import MakeOrder
-from tests.test_return_to_main_page import MainPage
+from pages.return_to_main_page import MainPage
 from tests.test_wishlist import MakeWishlist
 
 
