@@ -7,7 +7,7 @@ class MainPage:
 # Выход на главную страницу сайта
     def test_return_to_main_page(self, driver, base_url):
 
-        main_page = driver.find_element(self.locator_main_page)
+        main_page = driver.find_element(*self.locator_main_page)
         main_page.click()
         get_url = driver.current_url
 

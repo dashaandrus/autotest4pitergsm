@@ -28,7 +28,7 @@ class NewItem:
     def test_add_iphone_to_cart(self, driver):
 
         # Находим элемент, на который нужно навести
-        menu_item_iphone = driver.find_element(self.locator_menu_item_iphone)
+        menu_item_iphone = driver.find_element(*self.locator_menu_item_iphone)
 
         # Выполняем наведение на элемент в выпадающем списке
         actions = ActionChains(driver)
@@ -40,31 +40,31 @@ class NewItem:
         dropdown_iphone.click()
 
         # Выбираем фильтр по памяти
-        button_iphone_memory = driver.find_element(self.locator_button_iphone_memory)
+        button_iphone_memory = driver.find_element(*self.locator_button_iphone_memory)
         button_iphone_memory.click()
 
         # Добавляем телефон в корзину
-        add_iphone_to_cart = driver.find_element(self.locator_add_iphone_to_cart)
+        add_iphone_to_cart = driver.find_element(*self.locator_add_iphone_to_cart)
         add_iphone_to_cart.click()
 
         # Запоминаем название и цену телефона для сравнения в корзине
-        iphone_name = driver.find_element(self.locator_iphone_name)
+        iphone_name = driver.find_element(*self.locator_iphone_name)
         self.iphone_name_text = iphone_name.text
-        iphone_price = driver.find_element(self.locator_iphone_price)
+        iphone_price = driver.find_element(*self.locator_iphone_price)
         iphone_price_text = iphone_price.text
         self.iphone_price_to_int = int(iphone_price_text.replace(" ", "").replace("₽", "").strip())
 
     def test_add_watch_to_cart(self, driver):
         # Находим элемент для клика
-        menu_item_watches = driver.find_element(self.locator_menu_item_watches)
+        menu_item_watches = driver.find_element(*self.locator_menu_item_watches)
         menu_item_watches.click()
 
         # Выбираем тип часов
-        button_type_watch = driver.find_element(self.locator_button_type_watch)
+        button_type_watch = driver.find_element(*self.locator_button_type_watch)
         button_type_watch.click()
 
         # Выбираем размер экрана часов
-        button_watch_size = driver.find_element(self.locator_button_watch_size)
+        button_watch_size = driver.find_element(*self.locator_button_watch_size)
         button_watch_size.click()
 
         # Листаем страницу и добавляем часы
@@ -74,9 +74,9 @@ class NewItem:
         add_watch_to_cart.click()
 
         # Запоминаем название и цену часов для сравнения в корзине
-        watch_name = driver.find_element(self.locator_watch_name)
+        watch_name = driver.find_element(*self.locator_watch_name)
         self.watch_name_text = watch_name.text
-        watch_price = driver.find_element(self.locator_watch_price)
+        watch_price = driver.find_element(*self.locator_watch_price)
         watch_price_text = watch_price.text
         self.watch_price_to_int = int(watch_price_text.replace(" ", "").replace("₽", "").strip())
 

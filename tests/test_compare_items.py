@@ -14,25 +14,25 @@ class CompareItems():
 
     def test_compare_items(self, driver):
         driver.execute_script("window.scrollTo(0, 300);")
-        product_1 = driver.find_element(self.locator_product_1)
-        product_name_1 = driver.find_element(self.locator_product_name_1)
+        product_1 = driver.find_element(*self.locator_product_1)
+        product_name_1 = driver.find_element(*self.locator_product_name_1)
         product_name_1_text = product_name_1.text
         product_1.click()
 
-        product_2 = driver.find_element(self.locator_product_2)
-        product_name_2 = driver.find_element(self.locator_product_name_2)
+        product_2 = driver.find_element(*self.locator_product_2)
+        product_name_2 = driver.find_element(*self.locator_product_name_2)
         product_name_2_text = product_name_2.text
         product_2.click()
 
         driver.execute_script("window.scrollTo(0, 0);")
-        button_slide_menu = driver.find_element(self.locator_button_slide_menu)
+        button_slide_menu = driver.find_element(*self.locator_button_slide_menu)
         button_slide_menu.click()
-        button_compare = driver.find_element(self.locator_button_compare)
+        button_compare = driver.find_element(*self.locator_button_compare)
         button_compare.click()
 
-        compare_product_name_1 = driver.find_element(self.locator_compare_product_name_1)
+        compare_product_name_1 = driver.find_element(*self.locator_compare_product_name_1)
         compare_product_name_1_text = compare_product_name_1.text
-        compare_product_name_2 = driver.find_element(self.locator_compare_product_name_2)
+        compare_product_name_2 = driver.find_element(*self.locator_compare_product_name_2)
         compare_product_name_2_text = compare_product_name_2.text
 
         assert product_name_1_text == compare_product_name_1_text, 'Oops! Thats not mine'

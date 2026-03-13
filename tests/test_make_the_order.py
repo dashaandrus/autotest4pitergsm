@@ -12,22 +12,22 @@ class MakeOrder():
 
     def test_make_the_order(self, driver, iphone_price_to_int, watch_price_to_int):
 
-        make_order = driver.find_element(self.button_make_order)
+        make_order = driver.find_element(*self.button_make_order)
         make_order.click()
 
-        customer_name = driver.find_element(self.name)
+        customer_name = driver.find_element(*self.name)
         customer_name.send_keys('Тестов Тест Тестович')
 
-        customer_email = driver.find_element(self.email)
+        customer_email = driver.find_element(*self.email)
         customer_email.send_keys('test@email.ru')
 
-        customer_phone_number = driver.find_element(self.phone_number)
+        customer_phone_number = driver.find_element(*self.phone_number)
         customer_phone_number.send_keys('+79999999999')
 
-        customer_comment = driver.find_element(self.comment)
+        customer_comment = driver.find_element(*self.comment)
         customer_comment.send_keys('I love Python!')
 
-        sum_cart_final = driver.find_element(self.button_cart)
+        sum_cart_final = driver.find_element(*self.button_cart)
         sum_cart_final_text = sum_cart_final.text
         sum_cart_final_to_int = int(sum_cart_final_text.replace(" ", "").replace("₽", "").strip())
 
